@@ -19,6 +19,7 @@ import serviceRoutes from "./routes/management-product/serviceRoutes";
 import topicRoutes from "./routes/management-product/topicRoutes";
 import trainingCourseRoutes from "./routes/management-product/trainingCourseRoutes";
 import userRoutes from "./routes/management-persionnel/userRoutes";
+import consultationRoutes from "./routes/management-persionnel/consultationRoutes";
 dotenv.config();
 
 const app = express();
@@ -65,6 +66,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/topic", topicRoutes);
 app.use("/api/trainingCouse", trainingCourseRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/consult", consultationRoutes);
 
 
 app.use("/api/position", positionRoutes);

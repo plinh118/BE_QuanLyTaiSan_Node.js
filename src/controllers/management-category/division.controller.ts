@@ -9,7 +9,7 @@ export const getDivisions = async (req: Request, res: Response) => {
     pageIndex = "1",
     pageSize = "10",
     orderType = "ASC",
-    divisionName,
+    divisionName, 
     departmentName,
   } = req.query;
 

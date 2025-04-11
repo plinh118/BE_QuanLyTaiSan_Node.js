@@ -5,7 +5,7 @@ export interface GetUser extends RowDataPacket {
   Email: string;
   Password: string;
   FullName: string;
-  Role: 'admin' | 'user';
+  Role: string;
   Created_at: Date;
   updated_at: Date;
   TotalRecords: number;
@@ -14,12 +14,12 @@ export interface AddUser {
   Email: string;
   Password: string;
   FullName: string;
-  Role: 'admin' | 'user';
+  Role: string;
 }
 export interface UpUser {
   Id: number;
   Email: string;
   Password: string;
   FullName: string;
-  Role: 'admin' | 'user';
+  Role: string;
 }

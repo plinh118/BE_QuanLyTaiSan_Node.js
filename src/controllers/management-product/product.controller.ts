@@ -40,15 +40,16 @@ export const addProduct = async (req: Request, res: Response) => {
 
   try {
     const formattedEndDate = body.ProductEndDate ? body.ProductEndDate : null;
-
+    const Description=body.Description?body.Description:null;
     await db_Provider<any>(
-      "CALL AddProduct(?, ?, ?, ?, ?)",
+      "CALL AddProduct(?, ?, ?, ?,?, ?)",
       [
         body.ProductName.trim(),
         body.DepartmentId,
         body.ProductStartDate,
         formattedEndDate,
         body.ProductStatus,
+        Description
       ],
       true,
       res
@@ -69,9 +70,10 @@ export const updateProduct = async (req: Request, res: Response) => {
     }
 
     const formattedEndDate = body.ProductEndDate ? body.ProductEndDate : null;
+    const Description=body.Description?body.Description:null;
 
     await db_Provider<any>(
-      "CALL UpdateProduct(?, ?, ?, ?, ?, ?)",
+      "CALL UpdateProduct(?, ?, ?, ?, ?, ?,?)",
       [
         body.Id,
         body.ProductName.trim(),
@@ -79,6 +81,7 @@ export const updateProduct = async (req: Request, res: Response) => {
         body.ProductStartDate,
         formattedEndDate,
         body.ProductStatus,
+        Description
       ],
       true,
       res

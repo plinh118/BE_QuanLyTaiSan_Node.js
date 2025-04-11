@@ -7,7 +7,6 @@ const JWT_SECRET = process.env.JWT_SECRET || 'pham-thanh-long-2003004';
 
 export const Login = async (req: Request, res: Response) => {
     try {
-        console.log('Request body:', req.body);
         const { email, password } = req.body;
         if (!email || !password) {
           return res.status(400).json({ 
@@ -46,6 +45,7 @@ export const Login = async (req: Request, res: Response) => {
         res.json({
           message: 'Đăng nhập thành công',
           token,
+          errorCode: 0,
           user: {
             id: user.Id,
             email: user.Email,
